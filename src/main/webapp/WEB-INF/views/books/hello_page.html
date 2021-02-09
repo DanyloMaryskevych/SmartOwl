@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>Hello</title>
@@ -8,6 +8,12 @@
 
 <h3 align="center">Book store</h3>
 <h1 align="center">&#10077Smart owl&#10078</h1>
+
+<div th:each="book : ${books}">
+    <h3 th:text="${book.getId() + '. ' + book.getTitle()}">title</h3>
+    <h4 th:text="${book.getAuthor()}"></h4>
+    <p th:text="${'Price: ' + book.getPrice() + '$'}">price</p>
+</div>
 
 </body>
 </html>
