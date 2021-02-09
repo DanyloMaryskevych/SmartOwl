@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>New</title>
+</head>
+<body>
+
+<form th:method="POST" th:action="@{/smart_owl}" th:object="${book}">
+    <label for="title_id">Book title: </label>
+    <input type="text" th:field="*{title}" id="title_id">
+    <br/>
+    <label for="price_id">Book price: </label>
+    <input type="text" th:field="*{price}" id="price_id">
+    <br/>
+    <label for="amount_id">Amount: </label>
+    <input type="text" th:field="*{amount}" id="amount_id">
+    <br/>
+    <label for="year_id">Year: </label>
+    <input type="text" th:field="*{year}" id="year_id">
+    <br/>
+    <label for="author_id">Author: </label>
+    <input type="text" th:field="*{author}" id="author_id">
+    <br/>
+    <input type="submit" value="Add">
+</form>
+
+</body>
+</html>

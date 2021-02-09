@@ -3,15 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <title>Hello</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 </head>
 <body>
 
 <h3 align="center">Book store</h3>
 <h1 align="center">&#10077Smart owl&#10078</h1>
 
-<div th:each="book : ${books}">
-    <h3 th:text="${book.getId() + '. ' + book.getTitle()}">title</h3>
-    <h4 th:text="${book.getAuthor()}"></h4>
+<a href="/smart_owl/new" class="btn btn-success m-1" role="button">Add Book</a>
+
+<div class="m-lg-3" th:each="book : ${books}">
+    <h4 th:text="${book.getId() + '. ' + book.getTitle()}">title</h4>
+    <h5 th:text="${book.getAuthor()}"></h5>
     <p th:text="${'Price: ' + book.getPrice() + '$'}">price</p>
 </div>
 

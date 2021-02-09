@@ -11,6 +11,14 @@ public class Book {
     public Book() {
     }
 
+    public Book(String title, double price, int amount, int year, String author) {
+        this.title = title;
+        this.price = price;
+        this.amount = amount;
+        this.year = year;
+        this.author = author;
+    }
+
     public int getId() {
         return id;
     }
