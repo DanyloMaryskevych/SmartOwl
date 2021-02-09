@@ -17,8 +17,8 @@ public class BookDAO {
         this.jdbcTemplate = jdbcTemplate;
     }
 
-    public List<Book> index() {
-        return jdbcTemplate.query("SELECT * FROM books", new BeanPropertyRowMapper<>(Book.class));
+    public List<Book> index(String sortOrder, String order) {
+        return jdbcTemplate.query("SELECT * FROM books ORDER BY " + sortOrder + " " + order, new BeanPropertyRowMapper<>(Book.class));
     }
 
     public void save(Book book) {

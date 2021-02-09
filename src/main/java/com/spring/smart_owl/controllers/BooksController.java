@@ -5,12 +5,11 @@ import com.spring.smart_owl.models.Book;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
 import java.sql.SQLException;
+import java.util.Optional;
 
 @Controller
 @RequestMapping("/smart_owl")
@@ -24,8 +23,9 @@ public class BooksController {
     }
 
     @GetMapping()
-    public String index(Model model) {
-        model.addAttribute("books", bookDAO.index());
+    public String index(@RequestParam Optional<String> sort,
+                        @RequestParam Optional<String> order, Model model) {
+        model.addAttribute("books", bookDAO.index(sort.orElseGet(() -> "id"), order.orElseGet(() -> "asc")));
         return "books/hello_page";
     }
 
