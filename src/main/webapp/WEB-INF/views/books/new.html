@@ -7,20 +7,33 @@
 <body>
 
 <form th:method="POST" th:action="@{/smart_owl}" th:object="${book}">
-    <label for="title_id">Book title: </label>
+    <label for="title_id">Title: </label>
     <input type="text" th:field="*{title}" id="title_id">
+    <div th:if="${#fields.hasErrors('title')}" th:errors="*{title}">Name error</div>
     <br/>
-    <label for="price_id">Book price: </label>
+    <label for="image_id">Image: </label>
+    <input type="text" th:field="*{image}" id="image_id">
+    <div th:if="${#fields.hasErrors('image')}" th:errors="*{image}">Name error</div>
+    <br/>
+    <label for="description_id">Description: </label>
+    <input type="text" th:field="*{description}" id="description_id">
+    <div th:if="${#fields.hasErrors('description')}" th:errors="*{description}">error</div>
+    <br/>
+    <label for="price_id">Price: </label>
     <input type="text" th:field="*{price}" id="price_id">
+    <div th:if="${#fields.hasErrors('price')}" th:errors="*{price}">Name error</div>
     <br/>
     <label for="amount_id">Amount: </label>
     <input type="text" th:field="*{amount}" id="amount_id">
+    <div th:if="${#fields.hasErrors('amount')}" th:errors="*{amount}">Name error</div>
     <br/>
     <label for="year_id">Year: </label>
     <input type="text" th:field="*{year}" id="year_id">
+    <div th:if="${#fields.hasErrors('year')}" th:errors="*{year}">Name error</div>
     <br/>
     <label for="author_id">Author: </label>
     <input type="text" th:field="*{author}" id="author_id">
+    <div th:if="${#fields.hasErrors('author')}" th:errors="*{author}">Name error</div>
     <br/>
     <input type="submit" value="Add">
 </form>

@@ -5,9 +5,11 @@ import com.spring.smart_owl.models.Book;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.validation.Valid;
 import java.sql.SQLException;
 import java.util.Optional;
 
@@ -36,7 +38,9 @@ public class BooksController {
     }
 
     @PostMapping()
-    public String addBook(@ModelAttribute("book") Book book) {
+    public String addBook(@ModelAttribute("book") @Valid Book book,
+                          BindingResult bindingResult) {
+        if (bindingResult.hasErrors()) return "books/new";
         bookDAO.save(book);
         return "redirect:/smart_owl";
     }

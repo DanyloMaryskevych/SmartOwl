@@ -784,7 +784,7 @@ false YEKT
 false Z
 false Zulu
 </TimeZones>
-      <StartupTime>1612719230</StartupTime>
+      <StartupTime>1612875648</StartupTime>
     </root>
     <database id="2" parent="1" name="first_db">
       <ObjectId>16394</ObjectId>
@@ -798,9 +798,9 @@ false Zulu
     <database id="4" parent="1" name="smart_owl">
       <ObjectId>16401</ObjectId>
       <Owner>postgres</Owner>
-      <IntrospectionStateNumber>548</IntrospectionStateNumber>
+      <IntrospectionStateNumber>561</IntrospectionStateNumber>
       <Current>1</Current>
-      <Relations>sequence|table|16440|16442|1
+      <Relations>sequence|table|16451|16453|1
 </Relations>
     </database>
     <role id="5" parent="1" name="pg_execute_server_program">
@@ -871,7 +871,7 @@ UC/10
 </Acl>
       <StateNumber>287</StateNumber>
       <Owner>postgres</Owner>
-      <IntrospectionStateNumber>549</IntrospectionStateNumber>
+      <IntrospectionStateNumber>562</IntrospectionStateNumber>
       <Current>1</Current>
     </schema>
     <extension id="19" parent="4" name="plpgsql">
@@ -972,57 +972,69 @@ UC/10
       <Type>index</Type>
     </access-method>
     <sequence id="31" parent="18" name="books_id_seq">
-      <ObjectId>16440</ObjectId>
+      <ObjectId>16451</ObjectId>
       <Owner>postgres</Owner>
-      <StateNumber>544</StateNumber>
+      <StateNumber>560</StateNumber>
       <DataType>integer|0s</DataType>
     </sequence>
     <table id="32" parent="18" name="books">
-      <ObjectId>16442</ObjectId>
+      <ObjectId>16453</ObjectId>
       <Owner>postgres</Owner>
-      <StateNumber>544</StateNumber>
+      <StateNumber>560</StateNumber>
     </table>
     <column id="33" parent="32" name="id">
       <Position>1</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>544</StateNumber>
+      <StateNumber>560</StateNumber>
       <DefaultExpression>nextval(&apos;books_id_seq&apos;::regclass)</DefaultExpression>
       <TypeId>23</TypeId>
     </column>
     <column id="34" parent="32" name="title">
       <Position>2</Position>
       <DataType>varchar|0s</DataType>
-      <StateNumber>544</StateNumber>
+      <StateNumber>560</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="35" parent="32" name="price">
+    <column id="35" parent="32" name="image">
       <Position>3</Position>
+      <DataType>varchar|0s</DataType>
+      <StateNumber>560</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="36" parent="32" name="description">
+      <Position>4</Position>
+      <DataType>varchar|0s</DataType>
+      <StateNumber>560</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="37" parent="32" name="price">
+      <Position>5</Position>
       <DataType>double precision|0s</DataType>
-      <StateNumber>544</StateNumber>
+      <StateNumber>560</StateNumber>
       <TypeId>701</TypeId>
     </column>
-    <column id="36" parent="32" name="amount">
-      <Position>4</Position>
-      <DataType>integer|0s</DataType>
-      <StateNumber>544</StateNumber>
-      <TypeId>23</TypeId>
-    </column>
-    <column id="37" parent="32" name="year">
-      <Position>5</Position>
-      <DataType>integer|0s</DataType>
-      <StateNumber>544</StateNumber>
-      <TypeId>23</TypeId>
-    </column>
-    <column id="38" parent="32" name="author">
+    <column id="38" parent="32" name="amount">
       <Position>6</Position>
+      <DataType>integer|0s</DataType>
+      <StateNumber>560</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="39" parent="32" name="year">
+      <Position>7</Position>
+      <DataType>integer|0s</DataType>
+      <StateNumber>560</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="40" parent="32" name="author">
+      <Position>8</Position>
       <DataType>varchar|0s</DataType>
-      <StateNumber>544</StateNumber>
+      <StateNumber>560</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <index id="39" parent="32" name="books_pkey">
-      <ObjectId>16449</ObjectId>
-      <StateNumber>544</StateNumber>
+    <index id="41" parent="32" name="books_pkey">
+      <ObjectId>16460</ObjectId>
+      <StateNumber>560</StateNumber>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
       <Primary>1</Primary>
@@ -1030,9 +1042,9 @@ UC/10
       <CollationIds>0</CollationIds>
       <ClassIds>1978</ClassIds>
     </index>
-    <key id="40" parent="32" name="books_pkey">
-      <ObjectId>16450</ObjectId>
-      <StateNumber>544</StateNumber>
+    <key id="42" parent="32" name="books_pkey">
+      <ObjectId>16461</ObjectId>
+      <StateNumber>560</StateNumber>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>books_pkey</UnderlyingIndexName>

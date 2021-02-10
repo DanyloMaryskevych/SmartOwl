@@ -22,7 +22,8 @@ public class BookDAO {
     }
 
     public void save(Book book) {
-        jdbcTemplate.update("INSERT INTO books(title, price, amount, year, author) values(?, ?, ?, ?, ?)",
-                book.getTitle(), book.getPrice(), book.getAmount(), book.getYear(), book.getAuthor());
+        jdbcTemplate.update("INSERT INTO books(title, image, description, price, amount, year, author) values(?, ?, ?, ?, ?, ?, ?)",
+                book.getTitle(), book.getImage(), book.getDescription(), book.getPrice(),
+                book.getAmount(), book.getYear(), book.getAuthor());
     }
 }
