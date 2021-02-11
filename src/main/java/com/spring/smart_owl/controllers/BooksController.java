@@ -67,4 +67,10 @@ public class BooksController {
         bookDAO.editBook(id, book);
         return "redirect:/smart_owl";
     }
+
+    @DeleteMapping("/{id}")
+    public String delete(@PathVariable int id) {
+        bookDAO.delete(id);
+        return "redirect:/smart_owl";
+    }
 }

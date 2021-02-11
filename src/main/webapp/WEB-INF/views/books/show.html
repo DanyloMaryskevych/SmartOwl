@@ -50,11 +50,13 @@
 <div class="container mt-2 m-lg-3">
     <div class="row">
         <div class="col-1">
-            <a class="btn btn-warning" th:href="@{/smart_owl/{id}/edit(id=${someBook.getId()})}">Update</a>
+            <a class="btn btn-warning" th:href="@{/smart_owl/{id}/edit(id=${someBook.getId()})}">Edit</a>
         </div>
 
         <div class="col-1">
-            <button type="button" class="btn btn-danger">Delete</button>
+            <form th:method="DELETE" th:action="@{/smart_owl/{id}(id=${someBook.getId()})}">
+                <input class="btn btn-danger" type="submit" value="DELETE">
+            </form>
         </div>
     </div>
 </div>
