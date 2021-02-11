@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit book</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+</head>
+<body>
+<form th:method="PATCH" th:action="@{/smart_owl/{id}(id=${someBook.getId()})}" th:object="${someBook}"
+      style="width: 550px; margin-left: 20px; margin-top: 20px">
+
+    <div class="row">
+        <div class="col">
+            <div>
+                <label for="title_id">Title</label>
+                <input type="text" th:field="*{title}" id="title_id" class="form-control">
+                <div style="color: red" th:if="${#fields.hasErrors('title')}" th:errors="*{title}">Name error</div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-group">
+                <label for="author_id">Author</label>
+                <input type="text" th:field="*{author}" id="author_id" class="form-control">
+                <div style="color: red" th:if="${#fields.hasErrors('author')}" th:errors="*{author}">Name error</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mt-3">
+        <label for="description_id">Description</label>
+        <textarea class="form-control" th:field="*{description}" id="description_id" rows="3"></textarea>
+        <div style="color: red" th:if="${#fields.hasErrors('description')}" th:errors="*{description}">error</div>
+    </div>
+
+    <div class="mt-3">
+        <label for="image_id">Image</label>
+        <input type="text" th:field="*{image}" id="image_id" class="form-control">
+        <div style="color: red" th:if="${#fields.hasErrors('image')}" th:errors="*{image}">Name error</div>
+    </div>
+
+    <div class="row mt-3">
+        <div class="col">
+            <div class="form-group">
+                <label for="year_id">Year</label>
+                <input type="text" th:field="*{year}" id="year_id" class="form-control">
+                <div style="color: red" th:if="${#fields.hasErrors('year')}" th:errors="*{year}">Name error</div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="form-group">
+                <label for="price_id">Price</label>
+                <input type="text" th:field="*{price}" id="price_id" class="form-control">
+                <div style="color: red" th:if="${#fields.hasErrors('price')}" th:errors="*{price}">Name error</div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="form-group">
+                <label for="amount_id">Amount</label>
+                <input type="text" th:field="*{amount}" id="amount_id" class="form-control">
+                <div style="color: red" th:if="${#fields.hasErrors('amount')}" th:errors="*{amount}">Name error</div>
+            </div>
+        </div>
+
+    </div>
+    <hr/>
+    <input type="submit" class="btn btn-outline-success mt-2" value="Edit">
+</form>
+</body>
+</html>

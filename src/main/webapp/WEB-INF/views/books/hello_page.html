@@ -13,7 +13,6 @@
 <a href="/smart_owl/new" class="btn btn-success m-1" role="button">Add Book</a>
 
 <h5 class="m-2">Sort by:</h5>
-
 <form class="m-3">
     <div class="container m-2">
         <div class="row">
@@ -48,13 +47,11 @@
     <input type="submit" value="Sort" class="m-3">
 </form>
 
-<!--<a href="/smart_owl/some">some book</a>-->
-
 <div class="container">
     <div class="m-lg-3 row">
         <div class="col-md-3 p-2" align="center" th:each="book : ${books}">
             <h4>
-                <a th:href="@{/smart_owl/{id}(id=${book.getId()})}" th:text="${book.getTitle()}"></a>
+                <a style="color: black" th:href="@{/smart_owl/{id}(id=${book.getId()})}" th:text="${book.getTitle()}"></a>
             </h4>
 
             <h5 th:text="${'by ' + book.getAuthor()}"></h5>

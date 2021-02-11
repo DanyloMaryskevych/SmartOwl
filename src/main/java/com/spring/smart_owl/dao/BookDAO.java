@@ -31,4 +31,15 @@ public class BookDAO {
         return jdbcTemplate.query("SELECT * FROM books WHERE id = " + id, new BeanPropertyRowMapper<>(Book.class))
                 .stream().findAny().orElse(null);
     }
+
+    public void editBook(int id, Book editedBook) {
+        jdbcTemplate.update("UPDATE books SET title = ?, image = ?, description = ?, price = ?," +
+                "amount = ?, year = ?, author = ? WHERE id = ?", editedBook.getTitle(), editedBook.getImage(),
+                editedBook.getDescription(), editedBook.getPrice(), editedBook.getAmount(),
+                editedBook.getYear(), editedBook.getAuthor(), id);
+    }
+
+    public void delete(int id) {
+        jdbcTemplate.update("DELETE FROM books WHERE id = ?", id);
+    }
 }
