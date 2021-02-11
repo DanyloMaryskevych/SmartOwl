@@ -26,4 +26,9 @@ public class BookDAO {
                 book.getTitle(), book.getImage(), book.getDescription(), book.getPrice(),
                 book.getAmount(), book.getYear(), book.getAuthor());
     }
+
+    public Book getBook(int id) {
+        return jdbcTemplate.query("SELECT * FROM books WHERE id = " + id, new BeanPropertyRowMapper<>(Book.class))
+                .stream().findAny().orElse(null);
+    }
 }

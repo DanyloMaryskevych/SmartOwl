@@ -7,7 +7,6 @@
 </head>
 <body>
 
-
 <!--<img class="h-75 w-75" src="https://miro.medium.com/max/11914/0*L5spudfxjpJRzWFL">-->
 
 <form th:method="POST" th:action="@{/smart_owl}" th:object="${book}"
@@ -23,7 +22,7 @@
         </div>
         <div class="col">
             <div class="form-group">
-                <label for="author_id">Author: </label>
+                <label for="author_id">Author</label>
                 <input type="text" th:field="*{author}" id="author_id" class="form-control">
                 <div style="color: red" th:if="${#fields.hasErrors('author')}" th:errors="*{author}">Name error</div>
             </div>
@@ -45,7 +44,7 @@
     <div class="row mt-3">
         <div class="col">
             <div class="form-group">
-                <label for="year_id">Year: </label>
+                <label for="year_id">Year</label>
                 <input type="text" th:field="*{year}" id="year_id" class="form-control">
                 <div style="color: red" th:if="${#fields.hasErrors('year')}" th:errors="*{year}">Name error</div>
             </div>
@@ -61,7 +60,7 @@
 
         <div class="col">
             <div class="form-group">
-                <label for="amount_id">Amount: </label>
+                <label for="amount_id">Amount</label>
                 <input type="text" th:field="*{amount}" id="amount_id" class="form-control">
                 <div style="color: red" th:if="${#fields.hasErrors('amount')}" th:errors="*{amount}">Name error</div>
             </div>
