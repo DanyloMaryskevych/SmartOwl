@@ -1,7 +1,9 @@
 package com.spring.smart_owl.controllers;
 
 import com.spring.smart_owl.dao.BookDAO;
+import com.spring.smart_owl.dao.UserDAO;
 import com.spring.smart_owl.models.Book;
+import com.spring.smart_owl.models.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -19,16 +21,19 @@ import java.util.Optional;
 public class BooksController {
 
     private final BookDAO bookDAO;
+    private final UserDAO userDAO;
 
     @Autowired
-    public BooksController(BookDAO bookDAO) {
+    public BooksController(BookDAO bookDAO, UserDAO userDAO) {
         this.bookDAO = bookDAO;
+        this.userDAO = userDAO;
     }
 
     @GetMapping()
     public String index(@RequestParam Optional<String> sort,
                         @RequestParam Optional<String> order, Model model) {
         model.addAttribute("books", bookDAO.index(sort.orElseGet(() -> "id"), order.orElseGet(() -> "asc")));
+        model.addAttribute("user", new User());
         return "books/hello_page";
     }
 
